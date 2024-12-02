@@ -28,6 +28,7 @@
 #include "platform.h"
 #include "standards.h"
 #include "suppressions.h"
+#include "prohibited.h"
 
 #include <algorithm>
 #include <atomic>
@@ -525,6 +526,7 @@ public:
     std::string getMisraRuleText(const std::string& id, const std::string& text) const;
 
     static ExecutorType defaultExecutor();
+    prohibited mProhibited;
 
 private:
     static std::string parseEnabled(const std::string &str, std::tuple<SimpleEnableGroup<Severity>, SimpleEnableGroup<Checks>> &groups);

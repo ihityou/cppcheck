@@ -1404,7 +1404,16 @@ CmdLineParser::Result CmdLineParser::parseFromArgs(int argc, const char* const a
                 mSettings.xml = true;
                 mSettings.outputFormat = Settings::OutputFormat::xml;
             }
-
+            else if (std::strncmp(argv[i], "--prohibited-json=", 18) == 0)
+            {
+                const char *filename = argv[i] + 18;
+                const std::string errmsg(mSettings.mProhibited.parseJsonFile(filename));
+                if (!errmsg.empty())
+                {
+                    mLogger.printError(errmsg);
+                    return Result::Fail;
+                }
+            }
             else {
                 std::string message("unrecognized command line option: \"");
                 message += argv[i];

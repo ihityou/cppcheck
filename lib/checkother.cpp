@@ -70,6 +70,7 @@ static const CWE CWE704(704U);   // Incorrect Type Conversion or Cast
 static const CWE CWE758(758U);   // Reliance on Undefined, Unspecified, or Implementation-Defined Behavior
 static const CWE CWE768(768U);   // Incorrect Short Circuit Evaluation
 static const CWE CWE783(783U);   // Operator Precedence Logic Error
+static const CWE CWE800(800U);   // prohibited words
 
 //----------------------------------------------------------------------------------
 // The return value of fgetc(), getc(), ungetc(), getchar() etc. is an integer value.
